@@ -191,7 +191,7 @@ void Dlist<T>::push_back(const T& el)
 }
 
 template<class T>
-const size_t Dlist<T>::size()
+size_t Dlist<T>::size()
 {
 	return this->_size;
 }

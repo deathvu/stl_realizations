@@ -18,7 +18,7 @@ public:
 	void clear();
 	void show();
 	
-	const size_t size();
+	size_t size();
 	
 	Dlist& operator=(const Dlist&);
 	
