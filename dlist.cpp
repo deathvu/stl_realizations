@@ -176,12 +176,12 @@ void Dlist<T>::push_back(const T& el)
 	temp->data = el;
 	temp->pprev = tail;
 	
-	if(tail != nullptr)		//åñëè óæå åñòü ïîñëåäíèé ýëåìåíò
+	if(tail != nullptr)		
 	{
 		tail->pnext = temp;
 		tail = temp;
 	}
-	else if(_size == 0)			//åñëè ýëåìåíòîâ íåò
+	else if(_size == 0)	
 		head = tail = temp;
 		
 	else
