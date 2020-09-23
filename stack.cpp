@@ -43,5 +43,5 @@ template <typename T>
 void Stack<T>::printStack()
 {
     for (int ix = size -1; ix >= 0; ix--)
-        cout << "|" << setw(4) << stackPtr[ix] << endl;
+        std::cout << "|" << stackPtr[ix] << std::endl;
 }
