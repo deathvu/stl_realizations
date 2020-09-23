@@ -43,13 +43,13 @@ Shared_ptr<T>& Shared_ptr<T>::operator=(Shared_ptr& ptr)
 }
 
 template<class T>
-size_t Shared_ptr<T>::use_count() const {return count;}
+size_t Shared_ptr<T>::use_count() const {return this->count;}
 
 template<class T>
 bool Shared_ptr<T>::unique() const
 {
     if(*counter == 1) return false;
-    else if(counter == 0) return true
+    else if(counter == 0) return true;
 }
 
 template<class T>
@@ -59,10 +59,4 @@ void Shared_ptr<T>::reset()
         --counter;
     else if(counter == 0)
         delete s_ptr;
-}
-
-template<class T>
-Shared_ptr<T>::~Shared_ptr()
-{
-    reset();
 }
