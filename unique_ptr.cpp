@@ -2,18 +2,12 @@
 #include "header/unique_ptr.hpp"
 
 template<class T>
-Unique_ptr<T>::Unique_ptr(T* ptr = nullptr) :
+Unique_ptr<T>::Unique_ptr(T* ptr) :
 		s_ptr(ptr) {}
 	
 template<class T>
 Unique_ptr<T>::~Unique_ptr() { delete s_ptr; }
 	
-template<class T>
-Unique_ptr<T>::Unique_ptr(const Unique_ptr& obj) = delete;
-
-template<class T>
-Unique_ptr<T>& Unique_ptr<T>::operator=(const Unique_ptr& obj) = delete;
-
 template<class T>
 Unique_ptr<T>::operator bool () const { return s_ptr; }
 	
@@ -52,7 +46,7 @@ T Unique_ptr<T>::release()
 }
 	
 template<class T>
-void Unique_ptr<T>::reset(T ptr = T())
+void Unique_ptr<T>::reset(T ptr)
 {
 	T* old = s_ptr;
 	s_ptr = ptr;

@@ -6,8 +6,8 @@ class Unique_ptr
 public:
 	Unique_ptr(T* ptr); 
 	~Unique_ptr();
-	Unique_ptr(const Unique_ptr&);
-	Unique_ptr& operator=(const Unique_ptr&);
+	Unique_ptr(const Unique_ptr& obj) = delete;
+	Unique_ptr& operator=(const Unique_ptr& obj) = delete;
 	operator bool () const;
 	Unique_ptr(Unique_ptr&&); 
 	Unique_ptr& operator =(Unique_ptr&&);
